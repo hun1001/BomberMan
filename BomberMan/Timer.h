@@ -7,9 +7,9 @@ private:
 	time_t _timer;
 	struct tm _t;
 	long long _stime, _etime;
-	long long* _interval;
+	long long& _interval;
 
 public:
-	Timer(long long* interval);
+	Timer(long long& interval);
 	~Timer();
 };

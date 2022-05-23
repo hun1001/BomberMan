@@ -1,8 +1,7 @@
 #include "Timer.h"
 
-Timer::Timer(long long* interval)
+Timer::Timer(long long& interval) :_interval(interval)
 {
-	_interval = interval;
 	_timer = time(NULL);
 	localtime_s(&_t, &_timer);
 	_stime = _timer;
@@ -13,5 +12,5 @@ Timer::~Timer()
 {
 	_timer = time(NULL);
 	_etime = _timer;
-	*_interval = _etime - _stime;
+	_interval = _etime - _stime;
 }
